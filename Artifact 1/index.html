@@ -17,23 +17,25 @@
         }
 
         body {
-            overflow-x: hidden;
-            overflow-y: auto;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             background-color: #f5f5f5;
         }
 
         .site-header {
             width: 100%;
-            padding: 25px 20px 10px 50px;
+            padding: 15px 20px 5px 50px;
             text-align: left;
         }
 
         .group-title {
             font-family: 'Munchee', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
             color: #1a1a1a;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -43,14 +45,13 @@
             position: relative;
             display: inline-block;
             max-width: 100%;
-            max-height: calc(100vh - 100px);
-            margin-bottom: 15px;
+            max-height: calc(100vh - 125px);
         }
 
         .base-poster {
             display: block;
             max-width: 100%;
-            max-height: calc(100vh - 100px);
+            max-height: calc(100vh - 125px);
             object-fit: contain;
         }
 
@@ -216,6 +217,21 @@
             width: 20.83%;
             z-index: 8;
         }
+
+        .site-footer {
+            width: 100%;
+            padding: 8px 15px 12px;
+            text-align: center;
+            font-family: 'Munchee', sans-serif;
+            color: #666666;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .site-footer span {
+            display: inline-block;
+            margin: 0 8px;
+        }
     </style>
 </head>
 
@@ -237,8 +253,7 @@
                     <div class="flip-back">
                         <img src="assets/images/Russia_back.png" alt="Russia_back">
                         <span class="overlay-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis
-                            obcaecati
-                            non esse voluptatibus eius, quam magni accusamus.</span>
+                            obcaecati non esse voluptatibus eius, quam magni accusamus.</span>
                     </div>
                 </div>
             </div>
@@ -265,8 +280,7 @@
                     <div class="flip-back">
                         <img src="assets/images/Iran_back.png" alt="Iran_back">
                         <span class="overlay-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
-                            molestias sed
-                            rem doloribus, aliquid soluta? Perspiciatis, recusandae.</span>
+                            molestias sed rem doloribus, aliquid soluta? Perspiciatis, recusandae.</span>
                     </div>
                 </div>
             </div>
@@ -293,8 +307,8 @@
                     <div class="flip-back">
                         <img src="assets/images/Turkey_back.png" alt="Turkey_back">
                         <span class="overlay-text">hrkv vfenowv voen Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Voluptate ipsum enim doloribus modi! Nobis voluptatum blanditiis ratione voluptatem.</span>
+                            elit. Voluptate ipsum enim doloribus modi! Nobis voluptatum blanditiis ratione
+                            voluptatem.</span>
                     </div>
                 </div>
             </div>
@@ -321,9 +335,8 @@
                     <div class="flip-back">
                         <img src="assets/images/Netherlands_back.png" alt="Netherlands_back">
                         <span class="overlay-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-                            delectus vel
-                            ipsa ipsam error ullam aspernatur, deleniti doloremque. jkrvbnr fwejfno wkejfo3ng sjdf jdsi
-                            reb</span>
+                            delectus vel ipsa ipsam error ullam aspernatur, deleniti doloremque. jkrvbnr fwejfno
+                            wkejfo3ng sjdf jdsi reb</span>
                     </div>
                 </div>
             </div>
@@ -342,6 +355,12 @@
         </div>
 
     </div>
+
+    <footer class="site-footer">
+        <span>Artwork by: Cat</span> •
+        <span>Content by: Anita, Cat & Anastasiya</span> •
+        <span>Website by: Anita</span>
+    </footer>
 
 </body>
 
