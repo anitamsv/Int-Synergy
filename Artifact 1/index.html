@@ -60,14 +60,12 @@
             position: absolute;
         }
 
-        /* کانتینر مبنا برای مقیاس فونت (cqw) در موبایل و دسکتاپ */
         .flip-layer {
             perspective: 1200px;
             cursor: pointer;
             container-type: inline-size;
         }
 
-        /* کانتینر چرخش سه‌بعدی روان */
         .flip-inner {
             position: relative;
             width: 100%;
@@ -78,7 +76,6 @@
             will-change: transform;
         }
 
-        /* لایه جلو ارتفاع طبیعی تصویر را به والد منتقل می‌کند */
         .flip-front {
             position: relative;
             width: 100%;
@@ -88,7 +85,6 @@
             z-index: 2;
         }
 
-        /* لایه پشت تمام فضای لایه جلو را پر می‌کند */
         .flip-back {
             position: absolute;
             top: 0;
@@ -118,7 +114,6 @@
             -webkit-user-drag: none;
         }
 
-        /* متن کارت‌ها با واحد cqw تا هم در گوشی و هم لپ‌تاپ نسبت ثابتی با کادر داشته باشد */
         .overlay-text {
             position: absolute;
             width: 82%;
@@ -138,7 +133,6 @@
             font-size: 11.5cqw;
         }
 
-        /* موقعیت‌دهی متون با top و left/right به جای translate برای وضوح لبه‌ها و عدم لگ */
         .group-russia .Russia .overlay-text {
             top: 30%;
             right: 5%;
@@ -179,7 +173,6 @@
             left: 9%;
         }
 
-        /* انیمیشن چرخش هنگام رفتن ماوس روی هر کشور */
         .group-russia:hover .flip-inner,
         .group-iran:hover .flip-inner,
         .group-turkey:hover .flip-inner,
@@ -187,7 +180,6 @@
             transform: rotateY(180deg);
         }
 
-        /* مختصات لایه‌ها روی پوستر اصلی */
         .Russia {
             top: 29.75%;
             left: 18%;
