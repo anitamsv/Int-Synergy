@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Team Kebab Artifacts</title>
+    <style>
+        @font-face {
+            font-family: 'Munchee';
+            src: url('assets/fonts/Munchee Personal Use Only.ttf') format('truetype');
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+
+        .site-header {
+            width: 100%;
+            padding: 15px 20px 5px 50px;
+            text-align: left;
+        }
+
+        .group-title {
+            font-family: 'Munchee', sans-serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            max-height: calc(100vh - 125px);
+        }
+
+        .base-poster {
+            display: block;
+            max-width: 100%;
+            max-height: calc(100vh - 125px);
+            object-fit: contain;
+        }
+
+        .content {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .button {
+            position: absolute;
+            top: 22%;
+            left: 87.5%;
+            transform: translate(-50%, -50%);
+            width: 15%;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 10;
+            transition: transform 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translate(-50%, -50%) scale(1.06);
+        }
+
+        .button:active {
+            transform: translate(-50%, -50%) scale(0.96);
+        }
+
+        .bubble {
+            position: absolute;
+            top: 33.7%;
+            left: 52.5%;
+            transform: translate(-50%, -50%);
+            width: 82.5%;
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            z-index: 5;
+        }
+
+        .comments {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            z-index: 5;
+        }
+
+        .content.show-comments .bubble {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .content.show-comments .comments {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .site-footer {
+            width: 100%;
+            padding: 8px 15px 12px;
+            text-align: center;
+            font-family: 'Munchee', sans-serif;
+            color: #666666;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .site-footer span {
+            display: inline-block;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1 class="group-title">TEAM KEBAB</h1>
+    </header>
+
+    <div class="poster-wrapper">
+        <img src="assets/images/Template 5.png" alt="Poster Template" class="base-poster">
+
+        <div class="content">
+            <img src="assets/images/Button.png" alt="Button" class="button" id="toggleButton">
+            <img src="assets/images/Bubble.png" alt="Bubble" class="bubble">
+            <img src="assets/images/Comments.png" alt="Comments" class="comments">
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <span>Artwork by: Cat</span> •
+        <span>Content by: Anita, Cat & Anastasiya</span> •
+        <span>Website by: Anita</span>
+    </footer>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const content = document.querySelector('.content');
+
+        button.addEventListener('click', () => {
+            content.classList.toggle('show-comments');
+        });
+    </script>
+
+</body>
+
+</html>
