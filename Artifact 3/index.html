@@ -8,6 +8,7 @@
     @font-face {
       font-family: 'Munchee';
       src: url('assets/fonts/Munchee Personal Use Only.ttf') format('truetype');
+      font-display: swap;
     }
 
     * {
@@ -29,29 +30,96 @@
 
     .site-header {
       width: 100%;
-      padding: 15px 20px 5px 50px;
-      text-align: left;
+      padding: 16px 40px 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 20;
+    }
+
+    .title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 22px;
+      background: #ffffff;
+      border: 2px solid rgb(96, 92, 238);
+      border-radius: 40px;
+      box-shadow: 3px 3px 0px rgb(96, 92, 238);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .title-badge:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px rgb(96, 92, 238);
     }
 
     .group-title {
       font-family: 'Munchee', sans-serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
       color: #1a1a1a;
       letter-spacing: 2px;
       text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .artifacts-dock {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      background: #ffffff;
+      border: 2px solid rgb(96, 92, 238);
+      border-radius: 40px;
+      box-shadow: 3px 3px 0px rgb(96, 92, 238);
+      user-select: none;
+    }
+
+    .dock-link {
+      font-family: 'Munchee', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: #1a1a1a;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: transparent;
+      border: 1.5px solid transparent;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .dock-link:hover {
+      background-color: rgb(96, 92, 238);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .dock-link:active {
+      transform: translateY(0);
+    }
+
+    .dock-link.active {
+      background-color: rgb(214, 214, 255);
+      border-color: rgb(96, 92, 238);
+      color: #1a1a1a;
+      box-shadow: 2px 2px 0px rgb(96, 92, 238);
     }
 
     .poster-wrapper {
       position: relative;
       display: inline-block;
       max-width: 100%;
-      max-height: calc(100vh - 125px);
+      max-height: calc(100vh - 160px);
     }
 
     .base-poster {
       display: block;
       max-width: 100%;
-      max-height: calc(100vh - 125px);
+      max-height: calc(100vh - 160px);
       object-fit: contain;
     }
 
@@ -134,17 +202,62 @@
 
     .site-footer {
       width: 100%;
-      padding: 8px 15px 12px;
-      text-align: center;
-      font-family: 'Munchee', sans-serif;
-      color: #666666;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+      padding: 8px 20px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
     }
 
-    .site-footer span {
-      display: inline-block;
-      margin: 0 8px;
+    .footer-dock {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 7px 22px;
+      background: #ffffff;
+      border: 2px solid rgb(96, 92, 238);
+      border-radius: 40px;
+      box-shadow: 3px 3px 0px rgb(96, 92, 238);
+      font-family: 'Munchee', sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.8px;
+      color: #1a1a1a;
+      user-select: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .footer-dock:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px rgb(96, 92, 238);
+    }
+
+    .footer-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-tag {
+      background: #f0f0f0;
+      border: 1.5px solid rgb(96, 92, 238);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-author {
+      color: #1a1a1a;
+    }
+
+    .footer-dot {
+      color: #1a1a1a;
+      font-weight: bold;
+      opacity: 0.4;
     }
   </style>
 </head>
@@ -152,7 +265,18 @@
 <body>
 
   <header class="site-header">
-    <h1 class="group-title">TEAM KEBAB</h1>
+    <div class="title-badge">
+      <h1 class="group-title">TEAM KEBAB</h1>
+    </div>
+
+    <nav class="artifacts-dock" aria-label="Artifacts Navigation">
+      <a href="../Introduction/index.html" class="dock-link">Introduction</a>
+      <a href="../Artifact 1/index.html" class="dock-link">01</a>
+      <a href="https://nastts.github.io/SynergyArtefacts/2/index.html" class="dock-link">02</a>
+      <a href="index.html" class="dock-link active">03</a>
+      <a href="https://nastts.github.io/SynergyArtefacts/4/index.html" class="dock-link">04</a>
+      <a href="../Artifact 5/index.html" class="dock-link">05</a>
+    </nav>
   </header>
 
   <div class="poster-wrapper">
@@ -175,9 +299,26 @@
   </div>
 
   <footer class="site-footer">
-    <span>Artwork by: Cat</span> •
-    <span>Content by: Anita, Cat & Anastasiya</span> •
-    <span>Website by: Anita</span>
+    <div class="footer-dock">
+      <div class="footer-item">
+        <span class="footer-tag">Artwork</span>
+        <span class="footer-author">Cat</span>
+      </div>
+
+      <span class="footer-dot">•</span>
+
+      <div class="footer-item">
+        <span class="footer-tag">Content</span>
+        <span class="footer-author">Anita, Cat & Anastasiya</span>
+      </div>
+
+      <span class="footer-dot">•</span>
+
+      <div class="footer-item">
+        <span class="footer-tag">Website</span>
+        <span class="footer-author">Anita</span>
+      </div>
+    </div>
   </footer>
 
 </body>
