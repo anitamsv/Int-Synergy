@@ -8,6 +8,7 @@
         @font-face {
             font-family: 'Munchee';
             src: url('assets/fonts/Munchee Personal Use Only.ttf') format('truetype');
+            font-display: swap;
         }
 
         * {
@@ -132,34 +133,66 @@
             z-index: 5;
         }
 
-        .anita-bubble {
+        .bubble-item {
             position: absolute;
-            top: 56.2%;
-            left: 59.5%;
             transform: translate(-50%, -50%);
             width: 34%;
+            container-type: inline-size;
             pointer-events: auto;
             z-index: 5;
+        }
+
+        .bubble-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .bubble-text {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 78%;
+            color: #ffffff;
+            font-family: 'Munchee', sans-serif;
+            font-size: 5.8cqw;
+            line-height: 1.2;
+            text-align: center;
+            -webkit-text-stroke: 1px #000000;
+            paint-order: stroke fill;
+            pointer-events: none;
+            user-select: none;
         }
 
         .anastasiya-bubble {
-            position: absolute;
             top: 38.3%;
             left: 60.5%;
-            transform: translate(-50%, -50%);
-            width: 34%;
-            pointer-events: auto;
-            z-index: 5;
+        }
+
+        .anita-bubble {
+            top: 56.2%;
+            left: 59.5%;
         }
 
         .cat-bubble {
-            position: absolute;
             top: 74%;
             left: 59%;
-            transform: translate(-50%, -50%);
-            width: 34%;
-            pointer-events: none;
-            z-index: 5;
+        }
+
+        .anastasiya-bubble .bubble-text {
+            top: 48%;
+            left: 50%;
+        }
+
+        .anita-bubble .bubble-text {
+            top: 37%;
+            left: 51%;
+        }
+
+        .cat-bubble .bubble-text {
+            top: 36%;
+            left: 50%;
         }
 
         .site-footer {
@@ -249,9 +282,25 @@
         </div>
 
         <div class="bubbles">
-            <img src="assets/images/Anita Bubble.png" alt="Anita Bubble" class="anita-bubble">
-            <img src="assets/images/Anastasiya Bubble.png" alt="Anastasiya Bubble" class="anastasiya-bubble">
-            <img src="assets/images/Cat Bubble.png" alt="Cat Bubble" class="cat-bubble">
+            <div class="bubble-item anastasiya-bubble">
+                <img src="assets/images/Anastasiya Bubble.png" alt="Anastasiya Bubble">
+                <span class="bubble-text"></span>
+            </div>
+
+            <div class="bubble-item anita-bubble">
+                <img src="assets/images/Anita Bubble.png" alt="Anita Bubble">
+                <span class="bubble-text">I'm Anita from Iran, one of the creators of this site, and someone who
+                    enjoys coding and building websites
+                    and apps 💻</span>
+            </div>
+
+            <div class="bubble-item cat-bubble">
+                <img src="assets/images/Cat Bubble.png" alt="Cat Bubble">
+                <span class="bubble-text">Hoi everyone! Welcome! ^_^<br>
+                    My name is Cat & I'm the Dutchie in this group!<br>
+                    I made all the art for this project! No AI used! 🎨<br>
+                    Thanks for coming to our booth!</span>
+            </div>
         </div>
     </div>
 
